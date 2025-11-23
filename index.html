@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Editing a creationist book with ChatGPT-5</title>
+  <style>
+:root{--sans-font:-apple-system,BlinkMacSystemFont,"Avenir Next",Avenir,"Nimbus Sans L",Roboto,"Noto Sans","Segoe UI",Arial,Helvetica,"Helvetica Neue",sans-serif;--mono-font:Consolas,Menlo,Monaco,"Andale Mono","Ubuntu Mono",monospace;--standard-border-radius:5px;--border-width:1px;--bg:#fff;--accent-bg:#f5f7ff;--text:#212121;--text-light:#585858;--border:#898ea4;--accent:#0d47a1;--accent-hover:#1266e2;--accent-text:var(--bg);--code:#d81b60;--preformatted:#444;--marked:#fd3;--disabled:#efefef}@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#212121;--accent-bg:#2b2b2b;--text:#dcdcdc;--text-light:#ababab;--accent:#ffb300;--accent-hover:#ffe099;--accent-text:var(--bg);--code:#f06292;--preformatted:#ccc;--disabled:#111}img,video{opacity:.8}}*,:before,:after{box-sizing:border-box}textarea,select,input,progress{-webkit-appearance:none;-moz-appearance:none;appearance:none}html{font-family:var(--sans-font);scroll-behavior:smooth}body{color:var(--text);background-color:var(--bg);grid-template-columns:1fr min(45rem,90%) 1fr;margin:0;font-size:1.15rem;line-height:1.5;display:grid}body>*{grid-column:2}body>header{background-color:var(--accent-bg);border-bottom:var(--border-width)solid var(--border);text-align:center;grid-column:1/-1;padding:0 .5rem 2rem}body>header>:only-child{margin-block-start:2rem}body>header h1{max-width:1200px;margin:1rem auto}body>header p{max-width:40rem;margin:1rem auto}main{padding-top:1.5rem}body>footer{color:var(--text-light);text-align:center;border-top:var(--border-width)solid var(--border);margin-top:4rem;padding:2rem 1rem 1.5rem;font-size:.9rem}h1{font-size:3rem}h2{margin-top:3rem;font-size:2.6rem}h3{margin-top:3rem;font-size:2rem}h4{font-size:1.44rem}h5{font-size:1.15rem}h6{font-size:.96rem}p{margin:1.5rem 0}p,h1,h2,h3,h4,h5,h6{overflow-wrap:break-word}h1,h2,h3{line-height:1.1}@media only screen and (width<=720px){h1{font-size:2.5rem}h2{font-size:2.1rem}h3{font-size:1.75rem}h4{font-size:1.25rem}}a,a:visited{color:var(--accent)}a:hover{text-decoration:none}button,.button,a.button,input[type=submit],input[type=reset],input[type=button]{border:var(--border-width)solid var(--accent);background-color:var(--accent);color:var(--accent-text);padding:.5em;line-height:normal;text-decoration:none}.button[aria-disabled=true],input:disabled,textarea:disabled,select:disabled,button[disabled]{cursor:not-allowed;background-color:var(--disabled);border-color:var(--disabled);color:var(--text-light)}input[type=range]{padding:0}abbr[title]{cursor:help;text-decoration-line:underline;text-decoration-style:dotted}button:enabled:hover,.button:not([aria-disabled=true]):hover,input[type=submit]:enabled:hover,input[type=reset]:enabled:hover,input[type=button]:enabled:hover{background-color:var(--accent-hover);border-color:var(--accent-hover);cursor:pointer}.button:focus-visible,button:focus-visible:where(:enabled),input:enabled:focus-visible:where([type=submit],[type=reset],[type=button]){outline:2px solid var(--accent);outline-offset:1px}header nav{padding:1rem 0 0;font-size:1rem;line-height:2}header nav ul,header nav ol{flex-flow:wrap;place-content:space-around center;align-items:center;margin:0;padding:0;list-style-type:none;display:flex}header nav ul li,header nav ol li{display:inline-block}header nav a,header nav a:visited{border:var(--border-width)solid var(--border);border-radius:var(--standard-border-radius);color:var(--text);margin:0 .5rem 1rem;padding:.1rem 1rem;text-decoration:none;display:inline-block}header nav a:hover,header nav a.current,header nav a[aria-current=page],header nav a[aria-current=true]{background:var(--bg);border-color:var(--accent);color:var(--accent);cursor:pointer}@media only screen and (width<=720px){header nav a{border:none;padding:0;line-height:1;text-decoration:underline}header nav a.current{background:0 0}}aside,details,pre,progress{background-color:var(--accent-bg);border:var(--border-width)solid var(--border);border-radius:var(--standard-border-radius);margin-bottom:1rem}aside{float:right;width:30%;margin-inline-start:15px;padding:0 15px;font-size:1rem}[dir=rtl] aside{float:left}@media only screen and (width<=720px){aside{float:none;width:100%;margin-inline-start:0}}article,fieldset,dialog{border:var(--border-width)solid var(--border);border-radius:var(--standard-border-radius);margin-bottom:1rem;padding:1rem}article h2:first-child,section h2:first-child,article h3:first-child,section h3:first-child{margin-top:1rem}section{border-top:var(--border-width)solid var(--border);border-bottom:var(--border-width)solid var(--border);margin:3rem 0;padding:2rem 1rem}section+section,section:first-child{border-top:0;padding-top:0}section+section{margin-top:0}section:last-child{border-bottom:0;padding-bottom:0}details{padding:.7rem 1rem}summary{cursor:pointer;word-break:break-all;margin:-.7rem -1rem;padding:.7rem 1rem;font-weight:700}details[open]>summary+*{margin-top:0}details[open]>summary{margin-bottom:.5rem}details[open]>:last-child{margin-bottom:0}table{border-collapse:collapse;margin:1.5rem 0}figure>table{width:max-content;margin:0}td,th{border:var(--border-width)solid var(--border);text-align:start;padding:.5rem}th{background-color:var(--accent-bg);font-weight:700}tr:nth-child(2n){background-color:var(--accent-bg)}table caption{margin-bottom:.5rem;font-weight:700}textarea,select,input,button,.button{font-size:inherit;border-radius:var(--standard-border-radius);box-shadow:none;max-width:100%;margin-bottom:.5rem;padding:.5em;font-family:inherit;display:inline-block}textarea,select,input{color:var(--text);background-color:var(--bg);border:var(--border-width)solid var(--border)}label{display:block}textarea:not([cols]){width:100%}select:not([multiple]){background-image:linear-gradient(45deg,transparent 49%,var(--text)51%),linear-gradient(135deg,var(--text)51%,transparent 49%);background-position:calc(100% - 15px),calc(100% - 10px);background-repeat:no-repeat;background-size:5px 5px,5px 5px;padding-inline-end:25px}[dir=rtl] select:not([multiple]){background-position:10px,15px}input[type=checkbox],input[type=radio]{vertical-align:middle;width:min-content;position:relative}input[type=checkbox]+label,input[type=radio]+label{display:inline-block}input[type=radio]{border-radius:100%}input[type=checkbox]:checked,input[type=radio]:checked{background-color:var(--accent)}input[type=checkbox]:checked:after{content:" ";border-right:solid var(--bg).08em;border-bottom:solid var(--bg).08em;background-color:#0000;border-radius:0;width:.2em;height:.4em;font-size:1.8em;position:absolute;top:.04em;left:.18em;transform:rotate(45deg)}input[type=radio]:checked:after{content:" ";background-color:var(--bg);border-radius:100%;width:.3em;height:.3em;font-size:1.8em;position:absolute;top:.125em;left:.125em}@media only screen and (width<=720px){textarea,select,input{width:100%}}input[type=color]{height:2.5rem;padding:.2rem}input[type=file]{border:0}hr{height:var(--border-width);background:var(--border);border:none;margin:1rem auto}mark{border-radius:var(--standard-border-radius);background-color:var(--marked);color:#000;padding:2px 5px}mark a{color:#0d47a1}img,video{border-radius:var(--standard-border-radius);max-width:100%;height:auto}figure{margin:0;display:block;overflow-x:auto}figure>img,figure>picture>img{margin-inline:auto;display:block}figcaption{text-align:center;color:var(--text-light);margin-block:1rem;font-size:.9rem;position:sticky;left:0}blockquote{border-inline-start:.35rem solid var(--accent);color:var(--text-light);margin-block:2rem;margin-inline:2rem 0;padding:.4rem .8rem;font-style:italic}cite{color:var(--text-light);font-size:.9rem;font-style:normal}dt{color:var(--text-light)}code,pre,pre span,kbd,samp{font-family:var(--mono-font);color:var(--code)}kbd{color:var(--preformatted);border:var(--border-width)solid var(--preformatted);border-bottom:3px solid var(--preformatted);border-radius:var(--standard-border-radius);padding:.1rem .4rem}pre{max-width:100%;color:var(--preformatted);padding:1rem 1.4rem;overflow:auto}pre code{color:var(--preformatted);background:0 0;margin:0;padding:0}progress{width:100%}progress:indeterminate{background-color:var(--accent-bg)}progress::-webkit-progress-bar{border-radius:var(--standard-border-radius);background-color:var(--accent-bg)}progress::-webkit-progress-value{border-radius:var(--standard-border-radius);background-color:var(--accent)}progress::-moz-progress-bar{border-radius:var(--standard-border-radius);background-color:var(--accent);transition-property:width;transition-duration:.3s}progress:indeterminate::-moz-progress-bar{background-color:var(--accent-bg)}dialog{background-color:var(--bg);max-width:40rem;margin:auto}dialog::backdrop{background-color:var(--bg);opacity:.8}@media only screen and (width<=720px){dialog{max-width:calc(100vw - 2rem)}}sup,sub{vertical-align:baseline;position:relative}sup{top:-.4em}sub{top:.3em}.notice{background:var(--accent-bg);border:var(--border-width)solid var(--border);border-radius:var(--standard-border-radius);margin:2rem 0;padding:1.5rem}div.notice p:first-of-type{margin-top:0}div.notice p:last-of-type{margin-bottom:0}@media print{@page{margin:1cm}body{display:block}body>header{background-color:unset}body>header nav,body>footer{display:none}article{border:none;padding:0}a[href^=http]:after{content:" <" attr(href)">"}abbr[title]:after{content:" (" attr(title)")"}a{text-decoration:none}p{widows:3;orphans:3}hr{border-top:var(--border-width)solid var(--border)}mark{border:var(--border-width)solid var(--border)}pre,table,figure,img,svg{break-inside:avoid}pre code{white-space:pre-wrap}}
+  </style>
+</head>
+<body>
+<h1 id="editing-a-young-earth-creation-book-with-chatgpt-5">Editing a
+young-earth creation book with ChatGPT-5</h1>
+<h2 id="background">Background</h2>
+<p>Creationism is a rapidly growing religious and intellectual
+phenomenon on a global scale. The late Ronald Numbers, an academic
+expert on creationism, explained in a 2012 speech that from the 1990s
+onward, creationism spread “beyond the United States and beyond
+Christianity to other religions to the present time where it is a global
+phenomenon.” Not only is creationism “booming in the Islamic world”, it
+“has also been adopted by other religious groups—for example, a group of
+Israeli and American Jews who formed the Torah Science Foundation in
+2000”—and has also emerged among Hindus. Türkiye incorporated
+creationism into its school curriculum in the 1980s.<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>My twin brother and I have written a one-stop shop book defending a
+trinitarian Christian young-earth creation perspective which we are
+self-publishing through Amazon KDP (~163,000 words).<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+Using a multi-faceted worldview-based approach, we cover essential
+background to the debate (pp. 8–159), rebut secular origins accounts
+(pp. 160–300), defend Genesis 1–11 (pp. 301–376) and discuss the outlook
+for secular origins and biblical creationism (pp. 377–391).<a
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a> The book took a large fraction of
+our spare time over a four year period; a big thank-you to our
+understanding families.</p>
+<p>We argue that the Christian creationist paradigm is stronger than is
+commonly acknowledged, and the secular origins accounts weaker than is
+admitted by many proponents. We believe the secular origins account
+(which today comprises the ΛCDM version of the Big Bang theory,
+abiogenesis and the Modern Synthesis) has been in post-peak decline
+intellectually since the mid-1960s. The biblical creationist movement
+(which includes Evangelical Protestants, Seventh Day Adventists,
+Reformed Protestants, and some traditional Roman Catholics and Jews)
+began to expand dramatically after the 1961 publication of The Genesis
+Flood and is now approaching the “end of the beginning”.</p>
+<p>We elected to use ChatGPT-5 as a component of the editing workflow to
+identify typographical and factual errors, and to identify any
+statements which could be classed as defamatory or consistent with hate
+speech.<a href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a></p>
+<h2 id="method">Method</h2>
+<p>Each chapter and appendix (average length 6,200 words) was copied and
+pasted from a Word DOCX file into a new ChatGPT chat, preceded by a
+prompt equivalent to the following:</p>
+<blockquote>
+<p>I’m going to paste in a chapter of my book. Check for factuality, and
+whether there is any defamation or hate speech concerns. Propose tweaks
+or corrections as required: PASTED_CHAPTER_MATERIAL</p>
+</blockquote>
+<h2 id="results">Results</h2>
+<p>Some excerpts from a number of Chat-GPT-5 responses are shown
+below.</p>
+<blockquote>
+<p><strong>Minor factual/style fixes</strong></p>
+<ul>
+<li>“YellowStone” → “Yellowstone”.</li>
+<li>“Francesca Petrarca” → “Francesco Petrarca.”</li>
+<li>“Wittenburg” → “Wittenberg.”</li>
+<li>“Pederson” → likely “Pedersen” (if citing Olaf Pedersen).</li>
+</ul>
+</blockquote>
+<p>Some of these typographical pick-ups were impressive because they
+enabled us to find and fix needle-in-a-haystack type errors.</p>
+<blockquote>
+<p><strong>Factuality flags &amp; corrections (high
+priority)</strong></p>
+<p><strong>1. Ronald Numbers episode</strong></p>
+<ul>
+<li>The Yellowstone/petrified forest anecdote and the “at least thirty
+thousand years old” quotation need exact page cites <strong>[It had
+this]</strong>. Also, be careful stating “rejected Christianity”;
+Numbers described himself later as an agnostic and remained a church
+historian; his journey is nuanced. Edit: “Numbers later described
+himself as agnostic; in his Creationists preface he recounts wrestling
+with geological claims (e.g., Yellowstone fossil forests).” Please
+verify the exact quotation and page or paraphrase cautiously.</li>
+</ul>
+<p><strong>2. Augustine portrayed as a “young-earth
+creationist”</strong></p>
+<ul>
+<li>Augustine did say humanity’s history was &lt;6,000 years in City of
+God, but he also rejected 24-hour creation days and developed rationes
+seminales (seed principles). Calling him a straightforward YEC is an
+overstatement. Edit: “Augustine affirmed a recent creation of humanity,
+yet interpreted the ‘days’ non-literally and proposed instantaneous
+creation with later unfolding. ‘Young-earth creationist’ in the modern
+sense over-simplifies his view.”</li>
+</ul>
+<p><strong>3. Athanasius as Augustine’s ‘foundation’</strong></p>
+<ul>
+<li>You tie Augustine’s project to Athanasius; fair theologically
+(Trinitarian continuity), but not a direct intellectual lineage for City
+of God. Consider rephrasing to avoid implying direct dependence. Edit:
+“Building within Nicene Trinitarian theology (championed by Athanasius),
+Augustine …”</li>
+</ul>
+<p><strong>4. Carolingian Renaissance details</strong></p>
+<ul>
+<li>Largely fine, but “Charlemagne slept with City of God under his
+pillow” is likely apocryphal. Edit: “A later tradition claims
+Charlemagne kept City of God by his bedside; whether apocryphal or not,
+the work’s influence was substantial.”</li>
+</ul>
+</blockquote>
+<p>This 4th point by ChatGPT-5 is questionable, although the quotation
+may indeed be apocryphal. In <em>Christianity and Classical Culture</em>
+(by Charles Norris Cochrane) the author states:</p>
+<blockquote>
+<p>Besides this, Augustine is credited with having inspired, through the
+<em>De Civitas Dei</em>, a conception underlying the Medieval Church and
+empire; in confirmation of which it is recorded that Charlemagne
+habitually slept with a copy of this work beneath his pillow”.<a
+href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a></p>
+</blockquote>
+<p>ChatGPT-5 helpfully discovered some arithmetic errors in the Appendix
+on abiogenesis probability calculations. (We did not use ChatGPT-5’s
+arithmetic corrections but recomputed these values ourselves using
+Microsoft Excel.)</p>
+<blockquote>
+<p><strong>Arithmetic — please fix these (important)</strong></p>
+<p>There are a few 10× exponent slips that propagate: 1. Ten proteins
+from 10 “critical-AA” motifs You compute (1/20)<sup>10</sup> =
+9.77×10<sup>−14</sup>, then allow 100 variants → 9.77×10<sup>−12</sup>
+per protein, and raise to the 10th power. - Correct result:
+(9.77×10<sup>−12</sup>)<sup>10</sup> ≈
+<strong>7.9×10<sup>−111</sup></strong> (not 7.9×10<sup>−110</sup>). 2.
+Combine proteins + DNA segments - With your DNA result:
+(2.46×10<sup>−10</sup>)<sup>10</sup> ≈ 8.1×10<sup>−97</sup> (fine), the
+product is:<br />
+7.9×10<sup>−111</sup> × 8.1×10<sup>−97</sup> ≈
+<strong>6.36×10<sup>−207</sup></strong><br />
+(not 6.4×10<sup>−206</sup>). 3. After multiplying by “number of rolls” -
+Using your 2.9×10<sup>54</sup> rolls, the overall probability
+becomes<br />
+2.9×10<sup>54</sup> × 6.36×10<sup>−207</sup> ≈
+<strong>1.9×10<sup>−152</sup></strong><br />
+(not 1.9×10<sup>−151</sup>).</p>
+<p>These do not alter your qualitative conclusion, but readers will
+expect the exponents to be exact in a numerical appendix. (I recomputed
+them carefully digit-by-digit.)</p>
+</blockquote>
+<p>There was further advice about our upper bound calculation for the
+probability of abiogenesis:</p>
+<blockquote>
+<p><strong>Modeling cautions worth one clarifying line each</strong></p>
+<p>These aren’t “errors,” but brief flags will pre-empt easy objections:
+- Independence: Multiplying many probabilities assumes independence
+among assembly events; that assumption is explicitly being used to
+over-estimate success odds in your favor. Say so. - Rate assumptions:
+Using enzyme-catalyzed rates for prebiotic, non-enzymatic chemistry is a
+strong assumption (again, in favor of abiogenesis). A parenthetical
+remark acknowledging this will help. - Sequence degeneracy assumptions:
+You grant six codon synonyms for all amino acids and three for the stop
+codon. That’s intentionally generous (two amino acids have only one
+codon, many have 2–4). One sentence noting this keeps the reader
+oriented. (ThoughtCo)</p>
+</blockquote>
+<p>(We were purposefully favouring abiogenesis at every turn in order to
+strengthen the argument.)</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>As a component of the editing workflow, we believe ChatGPT-5 was
+valuable and cost effective. The ChatGPT responses had a respectful,
+“liberal academic” tone.</p>
+<p>ChatGPT-5 did not capture all typographical errors. Both Microsoft
+Word and Amazon KDP identified additional typographical errors, as did
+layers of manual review.</p>
+<p>ChatGPT-5 did not remove the need for human review. Our book was
+reviewed in depth by a veteran creationist and a theologian. In
+addition, we obtained reviews from a retired pastor, a retired
+missionary, a lawyer, a math teacher and others. All provided valuable
+feedback which helped us to revise and improve the manuscript.</p>
+<p>ChatGPT-5 is a useful tool, and we plan to incorporate ChatGPT into
+editing workflows in the future.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p><a
+href="https://www.utoronto.ca/news/creationism-goes-global"
+class="uri">https://www.utoronto.ca/news/creationism-goes-global</a><a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>See <a href="https://www.rechristianize.com/origin.html"
+class="uri">https://www.rechristianize.com/origin.html</a><a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Supported by six appendices (pp.392–449).<a
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>The creation–evolution debate has at times included
+inflammatory statements (especially from some prominent New Atheists).
+Because such rhetoric can cross into hostility toward those of a
+differing viewpoint, it is important to check debate material for
+potential hate speech. As examples, Richard Dawkins has described
+teaching children religious identity as “child abuse,” (<a
+href="https://www.dailymail.co.uk/news/article-2312813/Richard-Dawkins-Forcing-religion-children-child-abuse-claims-atheist-professor.html"
+class="uri">https://www.dailymail.co.uk/news/article-2312813/Richard-Dawkins-Forcing-religion-children-child-abuse-claims-atheist-professor.html</a>)
+and Sam Harris has been criticised for writing that certain beliefs may
+be “so dangerous that it may even be ethical to kill people for
+believing them.” (<a
+href="https://www.theguardian.com/commentisfree/2007/may/07/comment.religion"
+class="uri">https://www.theguardian.com/commentisfree/2007/may/07/comment.religion</a>)
+These kinds of remarks show how easily the debate can shift from
+discussing ideas to targeting people, underscoring the need to review
+material carefully to ensure respectful and safe dialogue.<a
+href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Norris Cochrane, C. (2003) <em>Christianity and
+Classical Culture: A study of thought and action from Augustus to
+Augustine</em>. Indianapolis: Liberty Fund. p. 417.<a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
